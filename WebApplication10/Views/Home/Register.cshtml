@@ -1,0 +1,42 @@
+﻿@model WebApplication10.Models.ConsultationRequest
+
+<h2>Реєстрація на консультацію</h2>
+
+<form asp-action="Register" method="post">
+    <div>
+        <label asp-for="FullName">Ваше імя та призвище</label>
+        <input asp-for="FullName" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="ConsultationDate">Дата консультації</label>
+        <input asp-for="ConsultationDate" type="date" />
+        <span asp-validation-for="ConsultationDate" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Product">Продукт</label>
+        <select asp-for="Product">
+            <option value="JavaScript">JavaScript</option>
+            <option value="C#">C#</option>
+            <option value="Java">Java</option>
+            <option value="Python">Python</option>
+            <option value="Основи">Основи</option>
+        </select>
+        <span asp-validation-for="Product" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Відправити</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
